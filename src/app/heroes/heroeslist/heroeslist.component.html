@@ -31,14 +31,14 @@
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let heroe of heroes">
+                    <tr *ngFor="let heroe of heroes | heroFilter:listFilter">
                         <td>
                           <img *ngIf="mostrarImage" [src]="heroe.Image"
                                [style.width.px]="imagenWIDTH"
                                [style.margin.px]="imagenMARGIN"
                                >
                         </td>
-                        <td>{{ heroe.nombre }}</td>
+                        <td>{{ heroe.nombre | uppercase }}</td>
                         <td>{{ heroe.Descripcion }}</td>
                         <td>{{ heroe.race }}</td>
                         <td>{{ heroe.ki }}</td>
