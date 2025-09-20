@@ -1,0 +1,41 @@
+
+<form action="">
+
+  <div class="col-6">
+    <div class="mb-3">
+      <div class="form-group pt-4">
+        <label for="numero1">Numero 1</label>
+        <input type="number" class="form-control" id="numero1" [(ngModel)]="numero1" name="numero1"
+        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Numero 1">
+      </div>
+
+      <div class="form-group pt-4">
+        <label for="numero2">Numero 2</label>
+        <input type="number" class="form-control" id="numero2" [(ngModel)]="numero2" name="numero2"
+        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Numero 2">
+      </div>
+
+      <hr>
+      <input type="radio" (click)="sumar()" value="s">
+        <label for="html"> + </label><br>
+      <input type="radio" (click)="restar()" value="r">
+        <label for="html"> - </label><br>
+      <input type="radio" (click)="multiplicar()" value="m">
+        <label for="html"> * </label><br>
+      <input type="radio" (click)="dividir()" value="d">
+        <label for="html"> / </label><br>
+      <!--
+      <button style="margin: 10px" (click)="sumar()" class="btn btn-primary">+</button>
+      <button style="margin: 10px" (click)="restar()" class="btn btn-primary">-</button>
+      <button style="margin: 10px" (click)="multiplicar()" class="btn btn-primary">*</button>
+      <button style="margin: 10px" (click)="dividir()" class="btn btn-primary">/</button>
+      -->
+    </div>
+
+    <div class="col-6">
+      <h1>Tu resultado es: {{resultado}}</h1>
+    </div>
+
+  </div>
+
+</form>
