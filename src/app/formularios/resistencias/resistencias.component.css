@@ -1,0 +1,48 @@
+.resistor-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.color-select {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  margin-top: 15px;
+  padding: 8px 15px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+.result-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.result-table th, .result-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.result-table th {
+  background: #f4f4f4;
+}

@@ -1,0 +1,52 @@
+<div class="resistor-container">
+  <h2>Calculadora de Resistencias</h2>
+
+  <!-- 1ra banda -->
+  <label>1ra Banda:</label>
+
+    <label for="1_0"><input type="radio" id="col1_0"  [value]="0" [(ngModel)]="color1"> 0</label>
+    <label for="1_1"><input type="radio" id="col1_1"  [value]="1" [(ngModel)]="color1"> 1</label>
+    <label for="1_2"><input type="radio" id="col1_2"  [value]="2" [(ngModel)]="color1"> 2</label>
+    <label for="1_5"><input type="radio" id="col1_3"  [value]="3" [(ngModel)]="color1"> 3</label>
+    <label for="1_4"><input type="radio" id="col1_4"  [value]="4" [(ngModel)]="color1"> 4</label>
+    <label for="1_5"><input type="radio" id="col1_5"  [value]="5" [(ngModel)]="color1"> 5</label>
+    <label for="1_5"><input type="radio" id="col1_5"  [value]="5" [(ngModel)]="color1"> 5</label>
+
+
+
+  <!-- 2da banda -->
+  <label>2da Banda:</label>
+  <input type="number" [(ngModel)]="color2" min="0" max="9" placeholder="0-9">
+
+
+  <!-- Multiplicador -->
+  <label>Multiplicador:</label>
+  <input type="number" [(ngModel)]="mult" step="any" placeholder="Ej: 1, 10, 100, 0.1">
+
+  <!-- Tolerancia -->
+  <label>Tolerancia (%):</label>
+  <input type="number" [(ngModel)]="tolerancia" step="0.01" placeholder="Ej: 0.05 para 5%">
+
+  <button (click)="calcular()">Calcular</button>
+
+  <table class="result-table" *ngIf="resultado !== null">
+    <tr>
+      <th>Color1</th>
+      <th>Color2</th>
+      <th>Multiplicador</th>
+      <th>Tolerancia</th>
+      <th>Valor</th>
+      <th>Valor Máximo</th>
+      <th>Valor Mínimo</th>
+    </tr>
+    <tr>
+      <td>{{color1}}</td>
+      <td>{{color2}}</td>
+      <td>{{mult}}</td>
+      <td>{{tolerancia * 100}}%</td>
+      <td>{{vlorsf}}</td>
+      <td>{{valorMax}}</td>
+      <td>{{valorMin}}</td>
+    </tr>
+  </table>
+</div>

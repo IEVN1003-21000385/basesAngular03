@@ -1,33 +1,36 @@
 
-<form action="">
+<form action="" id="base">
 <h1>CINEPOLIS</h1>
-  <div>
   <!-- ENTRADAS -->
+  <div >
     <h2>Entradas</h2>
       <label for="nombre">nombre:</label><br>
-        <input type="text" id="nombre" name="nombre"><br>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre"><br>
+
+      <label for="comprador">Cantidad de compradores:</label><br>
+        <input type="number" id="comprador" name="comprador"  [(ngModel)]="comprador" min="0"><br>
 
       <label for="cc">Tarjeta Cineco</label><br>
-        <input type="radio" id="si" name="si" value="true" [(ngModel)]="descuento">
+        <input type="radio" id="si" name="si" [value]="true" [(ngModel)]="tarjetaC">
         <label for="si">Sí</label>
-        <input type="radio" id="no" name="no" value="false"[(ngModel)]="descuento">
+        <input type="radio" id="no" name="no" [value]="false" [(ngModel)]="tarjetaC">
         <label for="no">NO</label><br>
 
       <label for="cb">Cantidad de boletas:</label><br>
-        <input type="number" id="cb" name="cb" [(ngModel)]="cantBoletos"><br>
+        <input type="number" id="cb" name="cb" [(ngModel)]="cantBoletos" min="0"><br>
   </div>
   <br>
   <!-- ACCIONES -->
   <div>
     <h2>Acciones</h2>
     <button  (click)="comprar()" type="submit" value="procesar" >Procesar</button>
-    <button  (click)="comprar()" type="submit" value="procesar" >Salir</button>
+    <button  (click)="salir()" type="submit" value="procesar" >Salir</button>
   </div>
   <br>
  <!-- SALIDAS -->
     <div>
       <h2>Salidas</h2>
-      <h1>Valor a pagar: {{valorPagar}}</h1>
+      <h1>Valor a pagar: ${{total}}</h1>
     </div>
   <br>
 </form>
