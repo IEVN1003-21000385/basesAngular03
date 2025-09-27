@@ -67,3 +67,4 @@ export class CinepolisComponent {
     console.log("Monto del descuento: " +this.montoDescuento);
   }
 }
+
