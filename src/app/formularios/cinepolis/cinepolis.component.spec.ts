@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CinepolisComponent } from './cinepolis.component';
 
 describe('CinepolisComponent', () => {
