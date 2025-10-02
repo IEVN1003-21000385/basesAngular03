@@ -21,3 +21,4 @@ describe('CinepolisComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
