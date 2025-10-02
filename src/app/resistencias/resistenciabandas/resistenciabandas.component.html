@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="./resistenciabandas.component.css">
+<div id="primero">
+    <div>
+        <h1>RESISTENCIAS</h1>
+    </div>
+    <div class="ContTabla">
+<!-- 1ra. Banda -->
+        <table class="tablaBanda">
+            <thead>
+                <tr>
+                    <th>Opc.</th>
+                    <th>1ra. Banda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let banRes1 of banRes">
+                    <td><input type="radio" [value]="banRes1" name="banda1" [(ngModel)]="valorBanda1"></td>
+                    <td [style.background-color]="banRes1.codigoC" [style.color]="banRes1.colorT">{{ banRes1.numero }}</td>
+                </tr>
+            </tbody>
+        </table>
+<!-- 2da. Banda -->
+        <table class="tablaBanda">
+            <thead>
+                <tr>
+                    <th> Opc. </th>
+                    <th>2da. Banda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let banRes2 of banRes">
+                    <td><input type="radio" [value]="banRes2" name="banda2" [(ngModel)]="valorBanda2"></td>
+                    <td [style.background-color]="banRes2.codigoC" [style.color]="banRes2.colorT">{{ banRes2.numero }}</td>
+                </tr>
+            </tbody>
+        </table>
+<!-- 3ra. Banda -->
+        <table class="tablaBanda">
+            <thead>
+                <tr>
+                    <th>Opc.</th>
+                    <th>3ra. Banda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let banRes3 of banRes">
+                    <td><input type="radio" [value]="banRes3" name="banda3" [(ngModel)]="valorBanda3"></td>
+                    <td [style.background-color]="banRes3.codigoC" [style.color]="banRes3.colorT">x10<sup>{{ banRes3.numero }}</sup></td>
+                </tr>
+            </tbody>
+        </table>
+<!-- Tolerancia -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Opc.</th>
+                    <th>4ta. Banda</th>
+                </tr>
+            </thead>
+                <tr *ngFor="let banRes4 of banTol">
+                    <td><input type="radio" [value]="banRes4" name="banda4" [(ngModel)]="valorBanda4"></td>
+                    <td [style.background-color]="banRes4.codigoC" [style.color]="banRes4.colorT">{{banRes4.nombre}}: {{ banRes4.numero }}%</td>
+                </tr>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <button id="calcular" (click)="calcular()" accesskey="1">Calcular</button>
+    <button id="borrar" (click)="borrar()" accesskey="2">Borrar</button>
+
+<!-- Resultado -->
+    <table>
+        <thead>
+            <tr>
+                <th>Color 1</th>
+                <th>Color 2</th>
+                <th>Color 3</th>
+                <th>Tolerancia</th>
+                <th>Valor</th>
+                <th>Valor Max.</th>
+                <th>Valor Min.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td [style.background-color]="bc1" [style.color]="ct1">{{color1 || "Banda 1"}}</td>
+                <td [style.background-color]="bc2" [style.color]="ct2">{{color2 || "Banda 2"}}</td>
+                <td [style.background-color]="bc3" [style.color]="ct3">{{color3 || "Banda 3"}}</td>
+                <td [style.background-color]="bc4" [style.color]="ct4">{{color4 || "Bd. 4"}}: {{valorC4 || "N"}}%</td>
+                <td> {{resultadoValor || "0"}} Ω</td>
+                <td> {{resultadoMax  || "0"}} Ω</td>
+                <td> {{resultadoMin || "0"}} Ω</td>
+
+            <!--
+                <td>{{ calcularResistencia(valorBanda1?.numero, valorBanda2?.numero, valorBanda3?.numero, valorBanda4?.numero).valor }} Ω</td>
+                <td>{{ calcularResistencia(valorBanda1?.numero, valorBanda2?.numero, valorBanda3?.numero, valorBanda4?.numero).max }} Ω</td>
+                <td>{{ calcularResistencia(valorBanda1?.numero, valorBanda2?.numero, valorBanda3?.numero, valorBanda4?.numero).min }} Ω</td>
+            -->
+            </tr>
+        </tbody>
+    </table>
+</div>
